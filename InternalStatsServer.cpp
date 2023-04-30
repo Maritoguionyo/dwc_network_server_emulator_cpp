@@ -1,3 +1,4 @@
+#include "dwc_config.h"
 #include "InternalStatsServer.h"
 #include "StatsPage.h"
 #include <boost/bind.hpp>
@@ -18,7 +19,7 @@ private:
 };
 
 InternalStatsServer::InternalStatsServer() {
-    auto address = dwc_config.get_ip_port("InternalStatsServer");
+    auto address = dwc_config::get_ip_port("GameSpyManager");
     io_context_ = std::make_shared<boost::asio::io_context>();
     acceptor_ = std::make_shared<boost::asio::ip::tcp::acceptor>(*io_context_);
     acceptor_->open(address.protocol());
@@ -26,6 +27,7 @@ InternalStatsServer::InternalStatsServer() {
     acceptor_->bind(address);
     acceptor_->listen();
 }
+
 
 void InternalStatsServer::start() {
     server_manager_.connect();

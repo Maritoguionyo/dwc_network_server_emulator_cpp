@@ -6429,7 +6429,7 @@ boost/interprocess/mapped_region.hpp
 boost/interprocess/offset_ptr.hpp
 boost/interprocess/permissions.hpp
 boost/interprocess/segment_manager.hpp
-boost/interprocess/shared_memory_object.hpp
+#boost/interprocess/shared_memory_object.hpp
 boost/interprocess/windows_shared_memory.hpp
 boost/interprocess/xsi_key.hpp
 boost/interprocess/xsi_shared_memory.hpp
